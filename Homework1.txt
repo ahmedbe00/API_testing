@@ -1,0 +1,7 @@
+Smoke testing, also called build verification testing or confidence testing, is a software testing method that is used to determine if a new software build is ready for the next testing phase. This testing method determines if the most crucial functions of a program work but does not delve into finer details.
+Smoke test in this homework work task 1 will be to check if we can to see a informations about booking , people who booked, and other. 
+
+In task 1 we try to check if the crucial functions of this dummy booker are good. Conditions that must be met beforehand are that the URL of the page is:https://restful-booker.herokuapp.com/apidoc/index.html and that the page is loaded without any problems or difficulties.
+
+
+In task 2 we try to check if Login function of Demo PlaceLab app is functional. At first we use a GET method in Postman to see if URL is good. Then we check a login functionality with valid, invalid and empty credentials.
