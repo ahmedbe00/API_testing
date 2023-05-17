@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "6cc16aca-a2ed-43ce-9ac9-275c23cadf11",
+		"name": "PlaceLab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24008468",
+		"_collection_link": "https://galactic-space-608894.postman.co/workspace/QAMP2023~1a5a43d1-7498-46bb-a827-52082927168a/collection/24008468-6cc16aca-a2ed-43ce-9ac9-275c23cadf11?action=share&creator=24008468&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "LoginPositiveValidEmailAndPassword",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "asdasdas",
+						"username": "asdsad"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "{{validEmail}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{validPassword}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{placelabURL}}/api/v2/sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "LoginNegativeEmailAndPasswordEmpty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{placelabURL}}/api/v2/sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "LoginNegativeEmailValidPasswordEmpty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "{{validEmail}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "{{placelabURL}}/api/v2/sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "LoginNegativePasswordValidEmailEmpty",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "password",
+							"value": "{{validPassword}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{placelabURL}}/api/v2/sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "LoginNegativeEmailValidPasswordIncorrect",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{placelabURL}}/api/v2/sessions?email={{validEmail}}&password=12345678",
+					"host": [
+						"{{placelabURL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{validEmail}}"
+						},
+						{
+							"key": "password",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginNegativePasswordValidEmailIncorrect",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "sdadsasdas@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{validPassword}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{placelabURL}}/api/v2/sessions"
+			},
+			"response": []
+		},
+		{
+			"name": "LoginNegativeURLInvalid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "asdasdasdasda.com"
+			},
+			"response": []
+		}
+	]
+}
